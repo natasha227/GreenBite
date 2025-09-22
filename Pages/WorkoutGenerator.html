@@ -26,38 +26,45 @@
     </nav>
     <div class="HamburgerIcon"></div>
 
-    <div class="workoutContainer">
-        <h2>Choose Your Workout</h2>
-        <form id="workoutform">
-            <div class="formgroup">
-                <h3>Select Body Part</h3>
-                <div class="bodyParts">
+    
+            <div class="workoutContainer">
+    <h2>Choose Your Workout</h2>
+    <form id="workoutform">
+        <div class="formgroup">
+            <h3>Select Body Part</h3>
+            <div class="bodyParts">
                 <div class="part" data-part="arms"><img src="../Images/WorkoutGenerator/arms.jpg" alt="Arms"></div>
                 <div class="part" data-part="legs"><img src="../Images/WorkoutGenerator/legs.jpg" alt="Legs"></div>
                 <div class="part" data-part="core"><img src="../Images/WorkoutGenerator/core.jpg" alt="Core"></div>
                 <div class="part" data-part="fullbody"><img src="../Images/WorkoutGenerator/full.jpg" alt="Full Body"></div>
             </div>
-            
+        </div>
 
-            <div>
-                <label for="equipments">Equipments: </label>
-                <select id="equipments" required>
-                    <option value="">Select</option>
-                    <option value="none">No Equipment</option>
-                    <option value="dumbbells">Dumbbells</option>
-                    <option value="resistance">Ressistance Band</option>
-                </select>
-            </div>
-            
+        <div>
+            <label for="equipments">Equipments: </label>
+            <select id="equipments" required>
+                <option value="">Select</option>
+                <option value="none">No Equipment</option>
+                <option value="dumbbells">Dumbbells</option>
+                <option value="resistance">Resistance Band</option>
+            </select>
+        </div>
 
-            <button type="button" id="generateButton">Generate Workout</button>
+        <!-- Add Generate Workout button -->
+        <button type="button" id="generateButton">Generate Workout</button>
+
+        <!-- Timer Input and Buttons -->
+        <div style="margin-top: 20px;">
+            <input type="number" id="timerInput" placeholder="Minutes">
+            <button type="button" id="startTimer">Start</button>
             <button type="button" id="pauseButton">Pause</button>
-        </form>
+        </div>
+    </form>
 
-        
-        <div id="workoutPlan" class="workoutplan"></div>
-        <div id="timer" class="timer">00:00</div>
-    </div>
+    <div id="workoutPlan" class="workoutplan"></div>
+    <div id="timerDisplay" class="timer">00:00</div>
+</div>
+
     <footer class="footer">
 
         <div class="footerContainer">

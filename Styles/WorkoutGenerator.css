@@ -81,6 +81,7 @@ h1,h3
 {
     border: 2px solid green;
     background-color: rgba(0, 128, 0, 0.1);
+    border-radius: 10px;
 }
 
 
@@ -101,7 +102,7 @@ button
     margin: 10px;
     border: none;
     border-radius: 8px;
-    color: pointer;
+    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -135,7 +136,7 @@ button
 #workoutPlan
 {
     margin-top: 20px;
-    text-transform: left;
+    text-align: left;
     padding: 15px;
     background: rgba(255, 255, 255 , 0.1);
     border-radius: 12px;

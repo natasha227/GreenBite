@@ -1,82 +1,125 @@
-const breatheText = document.getElementById("breatheText");
-const animationCircle = document.getElementById("animation");
+// ======= DOM Elements =======
+const bodyParts = document.querySelectorAll(".part");
+const equipments = document.getElementById("equipments");
+const generateButton = document.getElementById("generateButton");
+const workoutPlan = document.getElementById("workoutPlan");
+
 const timerInput = document.getElementById("timerInput");
 const startTimerBtn = document.getElementById("startTimer");
+const pauseButton = document.getElementById("pauseButton");
 const timerDisplay = document.getElementById("timerDisplay");
-const toggleSoundBtn = document.getElementById("toggleSound");
 const sessionsDisplay = document.getElementById("noOfSessionsCompleted");
 
-// Ambient sound
-let ambientSound = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
-ambientSound.loop = true;
-let soundOn = false;
+// ======= Workout Data =======
+const workouts = {
+  "arms": {
+    "none": ["Push-ups", "Tricep Dips", "Arm Circles"],
+    "dumbbells": ["Bicep Curls", "Overhead Press", "Lateral Raises"],
+    "resistance": ["Band Curls", "Band Tricep Extensions", "Band Rows"]
+  },
+  "legs": {
+    "none": ["Squats", "Lunges", "Calf Raises"],
+    "dumbbells": ["Goblet Squats", "Dumbbell Deadlifts", "Step-Ups"],
+    "resistance": ["Band Squats", "Glute Bridges with Band", "Band Side Steps"]
+  },
+  "fullbody": {
+    "none": ["Burpees", "Mountain Climbers", "Jumping Jacks"],
+    "dumbbells": ["Thrusters", "Renegade Rows", "Dumbbell Swings"],
+    "resistance": ["Band Deadlifts", "Band Squat to Press", "Band Rows"]
+  },
+  "core": {
+    "none": ["Sit-Ups", "Plank", "Russian Twists"],
+    "dumbbells": ["Weighted Sit-Ups", "Dumbbell Side Bend", "Russian Twist with Dumbbell"],
+    "resistance": ["Band Ab Crunch", "Band Woodchop", "Band Pallof Press"]
+  }
+};
 
-// Breathing animation
-let breathePhase = "Inhale";
-setInterval(() => {
-    if (breathePhase === "Inhale") {
-        breathePhase = "Exhale";
-        breatheText.textContent = breathePhase;
-        animationCircle.classList.remove("breathe-inhale");
-        animationCircle.classList.add("breathe-exhale");
-    } else {
-        breathePhase = "Inhale";
-        breatheText.textContent = breathePhase;
-        animationCircle.classList.remove("breathe-exhale");
-        animationCircle.classList.add("breathe-inhale");
-    }
-}, 4000); // 4s per phase
+// ======= Variables =======
+let selectedPart = null;
+let timer;
+let timeRemaining = 0;
+let isPaused = false;
 
-// Timer functionality
-let timerInterval;
-startTimerBtn.addEventListener("click", () => {
-    clearInterval(timerInterval);
-    let duration = parseInt(timerInput.value);
-    if (isNaN(duration) || duration <= 0) {
-        alert("Please enter a valid number of minutes!");
-        return;
-    }
-    let timeLeft = duration * 60; // convert to seconds
-    timerDisplay.textContent = formatTime(timeLeft);
-
-    timerInterval = setInterval(() => {
-        timeLeft--;
-        timerDisplay.textContent = formatTime(timeLeft);
-
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval);
-            alert("Meditation complete!");
-            incrementSessions();
-        }
-    }, 1000);
+// ======= Body Part Selection =======
+bodyParts.forEach(part => {
+  part.addEventListener("click", () => {
+    bodyParts.forEach(p => p.classList.remove("selected"));
+    part.classList.add("selected");
+    selectedPart = part.dataset.part;
+  });
 });
 
-function formatTime(seconds) {
-    let mins = Math.floor(seconds / 60);
-    let secs = seconds % 60;
-    return `${String(mins).padStart(2,"0")}:${String(secs).padStart(2,"0")}`;
+// ======= Generate Workout =======
+generateButton.addEventListener("click", () => {
+  const equipment = equipments.value;
+
+  if (!selectedPart) {
+    alert("Please select a body part.");
+    return;
+  }
+
+  if (!equipment) {
+    alert("Please select equipment.");
+    return;
+  }
+
+  const exercises = workouts[selectedPart][equipment];
+
+  workoutPlan.innerHTML = `
+    <h3>${selectedPart.charAt(0).toUpperCase() + selectedPart.slice(1)} Workout:</h3>
+    <ul>${exercises.map(e => `<li>${e}</li>`).join("")}</ul>
+  `;
+
+  incrementSessions();
+});
+
+// ======= Timer Functions =======
+function updateTimerDisplay() {
+  const minutes = Math.floor(timeRemaining / 60);
+  const seconds = timeRemaining % 60;
+  timerDisplay.textContent = `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
 }
 
-// Ambient sound toggle
-toggleSoundBtn.addEventListener("click", () => {
-    if (soundOn) {
-        ambientSound.pause();
-        soundOn = false;
-        toggleSoundBtn.textContent = "Play Ambient Sound";
-    } else {
-        ambientSound.play().catch(err => console.log(err));
-        soundOn = true;
-        toggleSoundBtn.textContent = "Pause Ambient Sound";
-    }
-});
+function startTimer() {
+  const minutes = parseInt(timerInput.value);
+  if (isNaN(minutes) || minutes <= 0) {
+    alert("Please enter a valid number of minutes.");
+    return;
+  }
 
-// Session tracking using localStorage
+  timeRemaining = minutes * 60;
+  clearInterval(timer);
+  isPaused = false;
+  updateTimerDisplay();
+
+  timer = setInterval(() => {
+    if (!isPaused) {
+      timeRemaining--;
+      updateTimerDisplay();
+      if (timeRemaining <= 0) {
+        clearInterval(timer);
+        alert("Time's up!");
+      }
+    }
+  }, 1000);
+}
+
+function pauseTimer() {
+  isPaused = !isPaused;
+  pauseButton.textContent = isPaused ? "Resume" : "Pause";
+}
+
+// ======= Session Tracking =======
 function incrementSessions() {
-    let sessions = parseInt(localStorage.getItem("sessionsCompleted")) || 0;
-    sessions++;
-    localStorage.setItem("sessionsCompleted", sessions);
-    sessionsDisplay.textContent = sessions;
+  let sessions = parseInt(localStorage.getItem("sessionsCompleted")) || 0;
+  sessions++;
+  localStorage.setItem("sessionsCompleted", sessions);
+  sessionsDisplay.textContent = sessions;
 }
 
 // Load saved sessions
 sessionsDisplay.textContent = localStorage.getItem("sessionsCompleted") || 0;
+
+// ======= Event Listeners =======
+startTimerBtn.addEventListener("click", startTimer);
+pauseButton.addEventListener("click", pauseTimer);
