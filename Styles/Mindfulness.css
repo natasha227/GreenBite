@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #4caf50;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+.mindfulnessContainer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#animation {
+    width: 120px;
+    height: 120px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    margin: 20px auto;
+    transition: transform 4s ease-in-out, background-color 4s;
+}
+
+.breathe-inhale {
+    transform: scale(1.5);
+    background-color: #66bb6a;
+}
+
+.breathe-exhale {
+    transform: scale(1);
+    background-color: #4caf50;
+}
+
+#breatheText {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.breathingControls button {
+    padding: 8px 16px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.breathingControls button#startBreathing {
+    background-color: #4caf50;
+    color: white;
+}
+
+.breathingControls button#stopBreathing {
+    background-color: #f44336;
+    color: white;
+}
+
+.timer {
+    margin-top: 30px;
+}
+
+.timer input {
+    padding: 8px;
+    width: 80px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.timer button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+#timerDisplay {
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.ambientSound button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2196f3;
+    color: white;
+    cursor: pointer;
+}
+
+#noOfSessionsCompleted {
+    font-weight: bold;
+    color: #4caf50;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Footer */
+.footer {
+    background-color: #2e7d32;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.links a,
+.socialmedia a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.links a:hover,
+.socialmedia a:hover {
+    text-decoration: underline;
+}
+
+.newsletter {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.newsletter h3 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 250px;
+    max-width: 80%;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #2e7d32;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: #1b5e20;
+}
+
+#subscriptionMessage {
+    margin-top: 10px;
+    color: #ffeb3b;
+}

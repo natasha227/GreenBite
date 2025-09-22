@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Bite  - Calorie Calculator</title>
+    <link rel="stylesheet" href="../Styles/CalorieCalculator.css">
+    <script src="../Scripts/CalorieCalculator.js" defer></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../Favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Favicons/favicon-16x16.png">
+    <link rel="manifest" href="../Favicons/site.webmanifest">
+</head>
+<body>
+    <header>
+        <h1 >GREENBITE</h1>
+    </header>
+    <nav>
+        <a href="../Pages/index.html">Home</a>
+        <a href="../Pages/HealthyRecipes.html">Healthy Recipes</a>
+        <a href="../Pages/CalorieCalculator.html">Calorie Calculator</a>
+        <a href="../Pages/WorkoutGenerator.html">Workout Generator</a>
+        <a href="../Pages/Mindfulness.html">Mindfulness</a>
+        <a href="../Pages/ContactsAndFeedback.html">Contacts and Feedback</a>
+    </nav>
+    <div class="HamburgerIcon"></div>
+
+    <div class=""calculatorContainer>
+        <h1 id="topic1">Calorie & Macro Nutrients Calculator</h1>
+        
+        <form id="calories">
+            <div class="formGroup">
+                <label for="age">Age (years): </label>
+                <input type="number" id="age" required>
+            </div>
+            <div class="formGroup"></div>    
+                <label>Gender: </label>
+                <select id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="formGroup"></div>
+                <label for="height">Height (cm): </label>
+                <input type="number" id="height" required>
+            </div>
+            <div class="formGroup">
+                <label for="weight">Weight (kg): </label>
+                <input type="number" id="weight" required>
+            </div>
+            <div class="formGroup">
+                <label>Activirty Level: </label>
+                <select id="activitylevel" required>
+                    <option value="">Select Activity Level</option>
+                    <option value="1.2">Sedentary (Little/no exercise)</option>
+                    <option value="1.375">Lightly active (1–3 days/week)</option>
+                    <option value="1.55">Moderately active (3–5 days/week)</option>
+                    <option value="1.725">Very active (6–7 days/week)</option>
+                    <option value="1.9">Super active (Very hard exercise/physical job)</option>
+                </select>
+            </div>
+            <button type="submit">Calculate</button>
+        </form>
+        
+        <div id="result" class="result">
+            <h2>Results</h2>
+            <div class="resultItems">
+                <h3>BMR</h3>
+                <span id="bmr">0</span> kcal/day
+            </div>
+            <div class="resultItems">
+                <h3>TDEE</h3>
+                <span id="tdee">0</span> kcal/day
+            </div>
+
+            <h3>Macronutrients</h3>
+            <div class="macro">
+                <div class="macroItem">
+                    <div class="circle" id="carbCircle">
+                        <span class="value" id="carb">0</span> g
+                    </div>
+                    <p>Carbs (50%)</p>
+                </div>
+                <div class="macroItem">
+                    <div class="circle" id="protienCircle">
+                        <span class="value" id="protien">0</span> g
+                    </div>
+                    <p>Protien (20%)</p>
+                </div>
+                <div class="macroItem">
+                    <div class="circle" id="fatCircle">
+                        <span class="value" id="fat">0</span> g
+                    </div>
+                    <p>Fat (30%)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<br><br><br><br><br><br>
+    <footer class="footer">
+
+        <div class="footerContainer">
+
+            <div class="newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p id="subscriptionMessage"></p>
+            </div>
+            <p>&copy; 2025 GreenBite. All right reserved.</p>
+            <p class="links">
+                <a href="../Pages/index.html">Home</a>|
+                <a href="../Pages/HealthyRecipes.html">Healthy Recipes</a>|
+                <a href="../Pages/CalorieCalculator.html">Calorie Calculator</a>|
+                <a href="../Pages/WorkoutGenerator.html">Workout Generator</a>|
+                <a href="../Pages/Mindfulness.html">Mindfulness</a>|
+                <a href="../Pages/ContactsAndFeedback.html">Contacts and Feedback</a> 
+            </p>
+            <p class="socialmedia">
+                Follow us on:
+                <a href="#">Facebook</a>|
+                <a href="#">Instagram</a>|
+                <a href="#">Twitter</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

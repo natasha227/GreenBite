@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Bite  - Healthy Recipes</title>
+    <link rel="stylesheet" href="../Styles/HealthyRecipes.css">
+    <script src="../Scripts/HealthyRecipes.js" defer></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../Favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Favicons/favicon-16x16.png">
+    <link rel="manifest" href="../Favicons/site.webmanifest">
+</head>
+<body>
+    <header>
+        <h1>GREENBITE</h1>
+    </header>
+    <nav>
+        <a href="../Pages/index.html">Home</a>
+        <a href="../Pages/HealthyRecipes.html">Healthy Recipes</a>
+        <a href="../Pages/CalorieCalculator.html">Calorie Calculator</a>
+        <a href="../Pages/WorkoutGenerator.html">Workout Generator</a>
+        <a href="../Pages/Mindfulness.html">Mindfulness</a>
+        <a href="../Pages/ContactsAndFeedback.html">Contacts and Feedback</a>
+    </nav>
+    <div class="HamburgerIcon"></div>
+    
+    <div class="searchBar">
+        <input type="text" id="keyword"placeholder="Search recipes by name or category....">
+    </div>
+
+    <div class="recipes" id="breakfast">
+        <h2>Breakfast</h2>
+        <div class="recipeContainer" id="breakfastContainer"></div>
+    </div>
+
+    <div class="recipes" id="lunch">
+        <h2>Lunch</h2>
+        <div class="recipeContainer" id="lunchContainer"></div>
+    </div>
+
+    <div class="recipes" id="dinner">
+        <h2>Dinner</h2>
+        <div class="recipeContainer" id="dinnerContainer"></div>
+    </div>
+
+    <div class="recipes" id="snacks">
+        <h2>Snacks</h2>
+        <div class="recipeContainer" id="snacksContainer"></div>
+    </div>
+    <div class="modal" id="recipeModal">
+        <div class="modalContent">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            
+            <h3>Ingredients</h3>
+            <ul id="ingredients"></ul>
+
+            <h3>Steps</h3>
+            <ol id="steps"></ol>
+
+            <h3>Nutrition Information</h3>
+            <table id="nutrition">
+                <thread>
+                    <tr>
+                        <th>Nutrient</th>
+                        <th>Amount</th>
+                    </tr>
+                </thread>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+
+        <div class="footerContainer">
+
+            <div class="newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p id="subscriptionMessage"></p>
+            </div>
+            <p>&copy; 2025 GreenBite. All right reserved.</p>
+            <p class="links">
+                <a href="../Pages/index.html">Home</a>|
+                <a href="../Pages/HealthyRecipes.html">Healthy Recipes</a>|
+                <a href="../Pages/CalorieCalculator.html">Calorie Calculator</a>|
+                <a href="../Pages/WorkoutGenerator.html">Workout Generator</a>|
+                <a href="../Pages/Mindfulness.html">Mindfulness</a>|
+                <a href="../Pages/ContactsAndFeedback.html">Contacts and Feedback</a> 
+            </p>
+            <p class="socialmedia">
+                Follow us on:
+                <a href="#">Facebook</a>|
+                <a href="#">Instagram</a>|
+                <a href="#">Twitter</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

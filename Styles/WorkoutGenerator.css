@@ -1,0 +1,235 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header
+{
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav
+{
+    background-color: #4caf50;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a
+{
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+nav a:hover
+{
+    text-decoration: underline;
+}
+
+
+.container
+{
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+h1,h3
+{
+    margin-bottom: 20px;
+}
+
+
+.part
+{
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+
+.part img
+{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.part:hover
+{
+    transform: scale(1.50);
+    box-shadow: 0 0 15px #ff9800;
+}
+
+
+.part.selected
+{
+    border: 2px solid green;
+    background-color: rgba(0, 128, 0, 0.1);
+}
+
+
+#equipments
+{
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    margin: 20px 0;
+}
+
+
+button
+{
+    padding: 12px 24px;
+    font-size: 16px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    color: pointer;
+    transition: 0.3s;
+}
+
+
+#generateButton
+{
+    background-color: #4caf50;
+    color: white;
+}
+
+
+#generateButton:hover
+{
+    background-color: #45a049;
+}
+
+
+#pauseButton
+{
+    background-color: #f44336;
+    color: white;
+}
+
+
+#pauseButton:hover
+{
+    background-color: #d32f2f;
+}
+
+
+#workoutPlan
+{
+    margin-top: 20px;
+    text-transform: left;
+    padding: 15px;
+    background: rgba(255, 255, 255 , 0.1);
+    border-radius: 12px;
+}
+
+
+.exercises
+{
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+#timer
+{
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 15px;
+    background: #222;
+    border-radius: 12px;
+    display: inline-block;
+    min-width: 120px;
+}
+
+
+.footer
+{
+    background-color: #2e7d32;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footerContainer
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.links a,
+.socialmedia a
+{
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.links a:hover,
+.socialmedia a:hover
+{
+    text-decoration: underline;
+}
+
+.newsletter h3
+{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.newsletter h3
+{
+    margin-bottom: 10px;
+    color: white;
+}
+
+.newsletter input[type="email"]
+{
+    padding: 10px;
+    width: 250px;
+    max-width: 80%;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter button
+{
+    padding: 10px 20px;
+    border: none;
+    background-color: #2e7d32;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsletter button:hover
+{
+    background-color: #1b5e20;
+}
+
+#subscriptionMessage
+{
+    margin-top: 10px;
+    color: #ffeb3b;
+}

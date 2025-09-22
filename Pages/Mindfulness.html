@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Bite - Mindfulness</title>
+    <link rel="stylesheet" href="../Styles/Mindfulness.css">
+    <script src="../Scripts/Mindfulness.js" defer></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../Favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Favicons/favicon-16x16.png">
+    <link rel="manifest" href="../Favicons/site.webmanifest">
+</head>
+<body>
+    <header>
+        <h1>GREENBITE</h1>
+    </header>
+    <nav>
+        <a href="../Pages/index.html">Home</a>
+        <a href="../Pages/HealthyRecipes.html">Healthy Recipes</a>
+        <a href="../Pages/CalorieCalculator.html">Calorie Calculator</a>
+        <a href="../Pages/WorkoutGenerator.html">Workout Generator</a>
+        <a href="../Pages/Mindfulness.html">Mindfulness</a>
+        <a href="../Pages/ContactsAndFeedback.html">Contacts and Feedback</a>
+    </nav>
+
+    <main class="mindfulnessContainer">
+        <h2>Guided Breathing & Meditation</h2>
+
+        <div id="animation"></div>
+        <p id="breatheText">Inhale</p>
+
+        <div class="breathingControls">
+            <button id="startBreathing">Start Breathing</button>
+            <button id="stopBreathing">Stop Breathing</button>
+        </div>
+
+        <div class="timer">
+            <input type="number" id="timerInput" placeholder="Minutes" min="1" max="60">
+            <button id="startTimer">Start Timer</button>
+            <p id="timerDisplay">00:00</p>
+        </div>
+
+        <div class="ambientSound">
+            <button id="toggleSound">Play Ambient Sound</button>
+        </div>
+        <p>Sessions Completed: <span id="noOfSessionsCompleted">0</span></p>
+    </main>
+
+    <footer class="footer">
+        <div class="footerContainer">
+            <div class="newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p id="subscriptionMessage"></p>
+            </div>
+            <p>&copy; 2025 GreenBite. All right reserved.</p>
+            <p class="links">
+                <a href="../Pages/index.html">Home</a> |
+                <a href="../Pages/HealthyRecipes.html">Healthy Recipes</a> |
+                <a href="../Pages/CalorieCalculator.html">Calorie Calculator</a> |
+                <a href="../Pages/WorkoutGenerator.html">Workout Generator</a> |
+                <a href="../Pages/Mindfulness.html">Mindfulness</a> |
+                <a href="../Pages/ContactsAndFeedback.html">Contacts and Feedback</a>
+            </p>
+            <p class="socialmedia">
+                Follow us on:
+                <a href="#">Facebook</a> |
+                <a href="#">Instagram</a> |
+                <a href="#">Twitter</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

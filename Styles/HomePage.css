@@ -1,0 +1,186 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header
+{
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav
+{
+    background-color: #4caf50;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a
+{
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+nav a:hover
+{
+    text-decoration: underline;
+}
+
+.container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    min-height: 500px;
+    background-color: darkseagreen;
+}
+
+.about
+{
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hero
+{
+    flex: 1;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px green;
+    background-color: honeydew;
+}
+
+.hero img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero img.active
+{
+    opacity: 1;
+}
+
+.featuredBackground
+{
+    background-color: #81c784;
+    height: 180px;
+    position: relative;
+}
+
+.featured-content
+{
+    background-color: honeydew;
+    width: 80%;
+    max-width: 800px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 200px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+h2
+{
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+p
+{
+    color: #555;
+    font-size: 16px;
+    margin: 0;
+}
+
+.footer
+{
+    background-color: #2e7d32;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footerContainer
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.links a,
+.socialmedia a
+{
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.links a:hover,
+.socialmedia a:hover
+{
+    text-decoration: underline;
+}
+
+.newsletter
+{
+    margin-top: 20px;
+    text-align: center;
+}
+
+newsletter h3
+{
+    margin-bottom: 10px;
+    color: white;
+}
+
+.newsletter input[type="email"]
+{
+    padding: 10px;
+    width: 250px;
+    max-width: 80%;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter button
+{
+    padding-inline-start: 10px 20px;
+    border: none;
+    background-color: #2e7d32;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsletter button:hover
+{
+    background-color: #1b5e20;
+}
+
+#subscriptionMessage
+{
+    margin-top: 10px;
+    color: #ffeb3b;
+}
